@@ -1,0 +1,7 @@
+---
+- hosts: myhost
+  tasks:
+   - copy:
+      src: /home/vaseem/Library/manu.jpg
+      dest: /home/vagrant/manchester/
+
