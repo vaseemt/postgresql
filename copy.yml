@@ -3,9 +3,4 @@
   become: yes
   tasks:
    - name: postgresql..
-     command: docker pull bitnami/postgresql 
-
-#   - copy:
-#      src: /home/vaseem/Library/manu.jpg
-#      dest: /home/vagrant/test/
-
+     command: docker pull bitnami/postgresql
