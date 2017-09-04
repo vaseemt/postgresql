@@ -1,7 +1,11 @@
 ---
 - hosts: myhost
+  become: yes
   tasks:
-   - copy:
-      src: /home/vaseem/Library/manu.jpg
-      dest: /home/vagrant/test/
+   - name: postgresql..
+     command: docker pull bitnami/postgresql 
+
+#   - copy:
+#      src: /home/vaseem/Library/manu.jpg
+#      dest: /home/vagrant/test/
 
