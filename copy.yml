@@ -5,7 +5,7 @@
    - name: apt update to install curl
      command: sudo apt-get update
    - name: install curl
-     command: sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common
+     command: sudo apt-get -y install python apt-transport-https ca-certificates curl software-properties-common
    - name: add deb repo
      become: true
      apt_key:
@@ -17,4 +17,4 @@
      become: true
      command: apt-get update
    - name: install docker
-     command: sudo apt-get -y install docker-c
+     command: sudo apt-get -y install docker-ce
