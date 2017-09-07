@@ -1,20 +1,20 @@
 ---
-- hosts: myhost
-  become: yes
+- name: testing..
+  hosts: myhost
   tasks:
-   - name: installing docker..
+   - name: apt update to install curl
+     command: sudo apt-get update
+   - name: install curl
+     command: sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common
+   - name: add deb repo
+     become: true
+     apt_key:
+     url: "https://download.docker.com/linux/ubuntu/gpg"
+     state: present
+   - name: add repo
+     command: sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
+   - name: update repo
+     become: true
      command: apt-get update
-   - name: 1..
-     command: apt-get install apt-transport-https 
-     command: apt-get install ca-certificates
-     command: apt-get install curl
-     command: apt-get install software-properties-common
-   - name: curling....
-     command:  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-     command: apt-key fingerprint 0EBFCD88
-     command: add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-     command: apt-get update
-   - name: installinggggg....
-     command: apt-get install docker-ce
-   - name: postgresql..
-     command: docker pull bitnami/postgresql
+   - name: install docker
+     command: sudo apt-get -y install docker-c
