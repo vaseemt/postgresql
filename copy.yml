@@ -2,5 +2,8 @@
 - hosts: myhost
   become: yes
   tasks:
+   - name: installing docker..
+     command: apt-get update
+     command: apt-get install docker-ce
    - name: postgresql..
      command: docker pull bitnami/postgresql
