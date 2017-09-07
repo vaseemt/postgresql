@@ -1,8 +1,24 @@
 ---
-- name: copying file
-  hosts: myhost
+- hosts: myhost
+  become: yes
   tasks:
-   - copy:
-      src: /home/go/manu1.jpg
-      dest: /home/vagrant/test/
-
+   - name: installing docker..
+     command: apt-get update
+   - name: 1..
+     command: apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+   - name: curling....
+     command:  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+     command: apt-key fingerprint 0EBFCD88
+     command: add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+     command: apt-get update
+   - name: installinggggg....
+     command: apt-get install docker-ce
+   - name: postgresql..
+     command: docker pull bitnami/postgresql
