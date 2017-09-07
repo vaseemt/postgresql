@@ -9,8 +9,8 @@
    - name: add deb repo
      become: true
      apt_key:
-     url: "https://download.docker.com/linux/ubuntu/gpg"
-     state: present
+      url: "https://download.docker.com/linux/ubuntu/gpg"
+      state: present
    - name: add repo
      command: sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
    - name: update repo
