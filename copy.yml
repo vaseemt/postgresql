@@ -3,6 +3,6 @@
   hosts: myhost
   tasks:
    - copy:
-      src: ~/Library/manu1.jpg
+      src: /home/go/manu1.jpg
       dest: /home/vagrant/test/
 
